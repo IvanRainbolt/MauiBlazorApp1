@@ -10,6 +10,7 @@
 		<!-- Required - Enable Single Project for WinUI -->
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 		<WindowsPackageType>MSIX</WindowsPackageType>
+		<Platforms>x64</Platforms>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -32,6 +33,11 @@
 		<_ThisProjectStaticWebAsset Include="..\MauiBlazorApp1\wwwroot\**" Link="wwwroot\%(RecursiveDir)%(Filename)%(Extension)" RelativePath="%(RecursiveDir)%(Filename)%(Extension)" />
 		<None Include="@(_ThisProjectStaticWebAsset)" />
 		<RazorComponent Include="..\MauiBlazorApp1\**\*.razor" Exclude="..\MauiBlazorApp1\bin\**;..\MauiBlazorApp1\obj\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <RazorComponent Remove="..\MauiBlazorApp1\Main.razor" />
+	  <RazorComponent Remove="..\MauiBlazorApp1\Pages\FetchData.razor" />
 	</ItemGroup>
 
 	<ItemGroup>

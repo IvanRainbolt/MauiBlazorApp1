@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 
 namespace MauiBlazorApp1.Data
 {
-	public class WeatherForecastService
+    public class WeatherForecastService
 	{
 		private static readonly string[] Summaries = new[]
 		{
 			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 		};
 
-		public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+		public static Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
 		{
 			var rng = new Random();
 			return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
